@@ -1,0 +1,18 @@
+version: "3.9"
+
+services:
+  trino:
+    restart: always
+    image: trinodb/trino:latest
+    container_name: trino
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./etc:/etc/trino
+    networks:
+      - postgre_default
+
+networks:
+  postgre_default:
+    external: true
+
