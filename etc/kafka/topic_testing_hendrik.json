@@ -1,0 +1,34 @@
+{
+  "tableName": "customer_topic",
+  "schemaName": "default",
+  "topicName": "customer_topic",
+  "key": {
+    "dataFormat": "raw",
+    "fields": []
+  },
+  "message": {
+    "dataFormat": "json",
+    "fields": [
+      {
+        "name": "customer_id",
+        "mapping": "customer_id",
+        "type": "VARCHAR"
+      },
+      {
+        "name": "customer_name",
+        "mapping": "customer_name",
+        "type": "VARCHAR"
+      },
+      {
+        "name": "city",
+        "mapping": "city",
+        "type": "VARCHAR"
+      },
+      {
+        "name": "status",
+        "mapping": "status",
+        "type": "VARCHAR"
+      }
+    ]
+  }
+}

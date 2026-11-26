@@ -1,0 +1,25 @@
+version: "3.9"
+
+services:
+  trino:
+    restart: always
+    image: trinodb/trino:latest
+    container_name: trino
+    ports:
+      - "8050:8080"
+    volumes:
+      - ./etc:/etc/trino
+      - ./keytabs:/etc/keytabs:ro  #keytabs&krb5conf
+      - ./hadoop-conf:/etc/hadoop/conf:ro  #coresite&hdfssite
+    networks:
+      - postgre_default
+      - mysql_default
+    environment:
+      - HADOOP_CONF_DIR=/etc/hadoop/conf
+    mem_limit: 4g
+
+networks:
+  postgre_default:
+    external: true
+  mysql_default:
+    external: true

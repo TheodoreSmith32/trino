@@ -1,0 +1,30 @@
+# Secrets: Kerberos / Hadoop (company infrastructure)
+keytabs/
+*.keytab
+krb5.conf
+hadoop-conf/
+
+# Catalog configs hold DB hosts and passwords. Commit only *.example files.
+etc/catalog/*.properties
+!etc/catalog/*.properties.example
+
+# Env files
+.env
+.env.*
+!.env.example
+
+# Large binaries / images
+*.tar
+*.tar.gz
+*.jar
+
+# Windows / WSL metadata
+*:Zone.Identifier
+Thumbs.db
+Desktop.ini
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+*.swp
